@@ -1,0 +1,25 @@
+<view class="page">
+    <view class="weui-msg">
+        <view class="weui-msg__icon-area">
+            <icon type="success" size="93"></icon>
+        </view>
+        <view class="weui-msg__text-area">
+            <view class="weui-msg__title">录入成功</view>
+            <view class="weui-msg__desc">所有用户均可在首页查看或搜索到该名片</view>
+        </view>
+        <view class="weui-msg__opr-area">
+            <view class="weui-btn-area">
+                <button class="weui-btn" type="primary" bindtap="backToIndex">返回首页</button>
+                <!-- <button class="weui-btn" type="default" bindtap="backToIndex"></button> -->
+            </view>
+        </view>
+        <view class="weui-msg__extra-area">
+            <view class="weui-footer">
+                <!-- <view class="weui-footer__links">
+                    <navigator url="" class="weui-footer__link">底部链接文本</navigator>
+                </view> -->
+                <view class="weui-footer__text">Copyright © 2018-2019 heming</view>
+            </view>
+        </view>
+    </view>
+</view>

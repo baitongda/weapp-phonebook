@@ -1,0 +1,55 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__hd">
+        <view class="page__title">信息录入</view>
+        <view class="page__desc">您可在本页录入您的联系信息，录入成功后名片将会出现在首页。如需修改首页名片信息，也请新建录入，将会自动替换原有名片。</view>
+    </view>
+    <view class="page__bd">
+        <view class="weui-cells__title">请填写以下信息</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input"  >
+                <view class="weui-cell__hd">
+                    <view class="weui-label">名字</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入名字" value='{{name}}' bindinput="bindNameInput"/>
+                </view>
+            </view>
+            <view class="weui-cell weui-cell_input"  >
+                <view class="weui-cell__hd">
+                    <view class="weui-label">联系方式</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input class="weui-input" placeholder="请输入您的联系方式" value='{{phone}}' bindinput="bindPhoneInput"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells__title">介绍</view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea class="weui-textarea" placeholder="请输入商家介绍或地址" style="height: 4.0em" bindinput="getWords" maxlength='{{maxTextLen}}'/>
+                    <view class="weui-textarea-counter">{{textLen}}/{{maxTextLen}}</view>
+                </view>
+            </view>
+        </view>
+
+      <view class="weui-cells__title">请选择类别</view>
+        <view class="weui-cells weui-cells_after-title">
+            <radio-group bindchange="radioChange">
+                <label class="weui-cell weui-check__label" wx:for="{{radioItems}}" wx:key="value">
+                    <radio class="weui-check" value="{{item.value}}" checked="{{item.checked}}"/>
+
+                    <view class="weui-cell__bd">{{item.name}}</view>
+                    <view class="weui-cell__ft weui-cell__ft_in-radio" wx:if="{{item.checked}}">
+                        <icon class="weui-icon-radio" type="success_no_circle" size="16"></icon>
+                    </view>
+                </label>
+            </radio-group>
+        </view>
+
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="ok" >确定</button>
+        </view>
+    </view>
+</view>

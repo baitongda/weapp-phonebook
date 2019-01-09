@@ -1,0 +1,4 @@
+@import "../template/weui.wxss";
+page{
+    background-color: #FFFFFF;
+}

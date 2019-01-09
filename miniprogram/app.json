@@ -1,0 +1,35 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/input/input",
+    "pages/input/msg_success"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "城东商业圈",
+    "navigationBarTextStyle": "black"
+  },
+    "tabBar": {
+      "color": "#6e6d6b",
+      "selectedColor": "#e64340",
+      "borderStyle": "black",
+      "backgroundColor": "#fff",
+      "box-shadow": "0 0 0px 0",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "iconPath": "images/nav/home-off.png",
+          "selectedIconPath": "images/nav/home-on.png",
+          "text": "首页"
+        },
+        {
+          "pagePath": "pages/input/input",
+          "iconPath": "images/new.png",
+          "selectedIconPath": "images/new-on.png",
+          "text": "新建"
+        }
+      ]
+    }
+}
