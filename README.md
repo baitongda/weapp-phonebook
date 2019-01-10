@@ -4,7 +4,7 @@
 - 商家可录入通讯信息。
 
 #### 扫码体验
-<div align="center"><img src="./小程序码.png"/></div>
+<div align="center"><img src="./小程序码.jpg"/></div>
 
 #### 屏幕截图
 <img src="./screenshot1.jpg" width="40%"/>
