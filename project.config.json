@@ -10,7 +10,7 @@
 	},
 	"appid": "wx0e4e41b64d42eb75",
 	"projectname": "weapp-phonebook",
-	"libVersion": "2.4.3",
+	"libVersion": "2.6.0",
 	"condition": {
 		"search": {
 			"current": -1,

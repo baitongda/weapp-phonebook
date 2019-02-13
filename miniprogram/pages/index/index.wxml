@@ -23,7 +23,7 @@
         <view><text class="title">{{ item.name }}</text></view>
         <view><text class="intro">{{ item.introduce }}</text></view>
         <view><image src="/images/phone-icon.png" style="width:20rpx;height:20rpx;"></image><text class="intro">  电话：{{item.phone}}</text>
-          <image src="/images/phone-red.png" style="padding-left:140px;width:40rpx;height:40rpx;" data-phone="{{item.phone}}" bindtap="callphone"></image>
+          <image src="/images/phone-red.png" style="padding-left:140px;width:40rpx;height:40rpx;" data-phone="{{item.phone}}" data-name="{{item.name}}" bindtap="callphone"></image>
         </view>
     </view>
   </view>

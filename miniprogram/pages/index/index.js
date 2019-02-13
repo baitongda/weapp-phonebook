@@ -4,6 +4,8 @@ const db = wx.cloud.database({
 })
 const category = db.collection('category')
 const user = db.collection('user')
+const call_record = db.collection('call-record')
+const _ = db.command
 var app = getApp()
 Page({
   data: {
@@ -65,6 +67,9 @@ Page({
         //获取全部用户
       wx.cloud.callFunction({
         name: 'getuserlist',
+        data: {
+          categoryId: 0
+        },
         success(res) {
           that.setData({
             users: res.result.data
@@ -87,21 +92,35 @@ Page({
       }
     }else{
       if (this.data.searchInput == '') {
-        // 获取指定类别用户
-        user.where({
-          categoryId: categoryId
+        wx.cloud.callFunction({
+          // 要调用的云函数名称
+          name: 'getuserlist',
+          // 传递给云函数的参数
+          data: {
+            categoryId: categoryId
+          },
+          success(res) {
+            that.setData({
+              users: res.result.data
+            })
+          }
         })
-          .get({
-            success(res) {
-              let users = [];
-              for (var i = 0; i < res.data.length; i++) {
-                users.push(res.data[i]);
-              }
-              that.setData({
-                users: users
-              })
-            }
-          })
+
+        // 获取指定类别用户
+        // user.where({
+        //   categoryId: categoryId
+        // })
+        //   .get({
+        //     success(res) {
+        //       let users = [];
+        //       for (var i = 0; i < res.data.length; i++) {
+        //         users.push(res.data[i]);
+        //       }
+        //       that.setData({
+        //         users: users
+        //       })
+        //     }
+        //   })
       } else {
         // 获取指定类别用户、模糊查询
         user.where({
@@ -149,6 +168,16 @@ Page({
     this.getGoodsList(this.data.activeCategoryId)
   },
   callphone: function (event) {
+    call_record.add({
+      data: {
+        phone: event.currentTarget.dataset.phone,
+        name: event.currentTarget.dataset.name,
+      },
+      success(res) {
+        // res 是一个对象，其中有 _id 字段标记刚创建的记录的 id
+        console.log(res)
+      }
+    }),
     wx.makePhoneCall({
       phoneNumber: String(event.currentTarget.dataset.phone)
     })
