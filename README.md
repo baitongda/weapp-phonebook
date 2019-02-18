@@ -18,7 +18,7 @@
 
 - 由于代码中设定用户的 phone 字段为 string ,批量导入时建议以 json 格式导入，并指定值为字符串类型。可使用[在线转换工具](http://www.bejson.com/json/col2json/),如：
 
-    <img src="./convert.png" width="80%"/>
+    <img src="./convert.PNG" width="80%"/>
 
 ## 交流
 如果你有好的意见或建议，欢迎提issue或pull request。
